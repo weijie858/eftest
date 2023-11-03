@@ -1,0 +1,373 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0091A631-9B36-40AE-9F9C-DD1DDCDA2C2D}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>ConsoleApp_eftest</RootNamespace>
+    <AssemblyName>ConsoleApp_eftest</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.6.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.122.21.1, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.21.12.0\lib\net462\Oracle.ManagedDataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess.EntityFramework, Version=6.122.21.1, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.EntityFramework.21.9.0\lib\net462\Oracle.ManagedDataAccess.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Text.Encodings.Web, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.6.0.0\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=6.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.6.0.1\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BASE_AREA.cs" />
+    <Compile Include="BASE_BARCODE_PRINT_INSTRUCTION.cs" />
+    <Compile Include="BASE_COMMON_SELECT_ITEM.cs" />
+    <Compile Include="BASE_COMMON_SELECT_MAIN.cs" />
+    <Compile Include="BASE_EMAIL_PLACEHOLDER.cs" />
+    <Compile Include="BASE_EMAIL_SMTP.cs" />
+    <Compile Include="BASE_EMAIL_TEMPLATE.cs" />
+    <Compile Include="BASE_ORG_TYPE.cs" />
+    <Compile Include="BASE_PAYMENT_PLAN.cs" />
+    <Compile Include="BASE_SALES_PRODUCT_TYPE.cs" />
+    <Compile Include="BCONTRACTPLANPAYMENTTIME.cs" />
+    <Compile Include="BIP_RECEIVE.cs" />
+    <Compile Include="BIP_RECEIVE_CHANGE.cs" />
+    <Compile Include="BIP_RECEIVE_CHANGE_DETAIL.cs" />
+    <Compile Include="BIP_RECEIVE_CHANGE_SOURCE.cs" />
+    <Compile Include="BIP_RECEIVE_EVIDENCE.cs" />
+    <Compile Include="BIP_RECEIVE_PRODUCT.cs" />
+    <Compile Include="BIP_SUBJECT.cs" />
+    <Compile Include="BIZ_REC_WATER.cs" />
+    <Compile Include="BIZ_REC_WATER_DETAILS.cs" />
+    <Compile Include="BIZ_REC_WATER_VIEW.cs" />
+    <Compile Include="BM_BID_WIN.cs" />
+    <Compile Include="CM_AGGREGATE_CONTRACT.cs" />
+    <Compile Include="CM_AGGREGATE_CONTRACT_DETAILS.cs" />
+    <Compile Include="CM_AGGREGATE_CONTRACT_FINANCE.cs" />
+    <Compile Include="CM_AGGREGATE_CONTRACT_INVOICE.cs" />
+    <Compile Include="CM_COST_OVER.cs" />
+    <Compile Include="CM_FUNCTIONPOINT_DETAILS.cs" />
+    <Compile Include="CM_INVOICE_PRODUCT.cs" />
+    <Compile Include="CM_MILESTONE_PAYMENT.cs" />
+    <Compile Include="CM_MILESTONE_PRODUCT.cs" />
+    <Compile Include="CM_PROJECT_MANAGER.cs" />
+    <Compile Include="CM_PROJECT_PROFITS.cs" />
+    <Compile Include="CM_PROJECT_PROFITS_VIEW.cs" />
+    <Compile Include="CM_P_INFO_RELATION.cs" />
+    <Compile Include="CM_SALES_CONTRACT.cs" />
+    <Compile Include="CM_SALES_CONTRACT_ATTACH.cs" />
+    <Compile Include="CM_SALES_CONTRACT_ATTACH_OTHER.cs" />
+    <Compile Include="CM_SALES_CONTRACT_CHECK.cs" />
+    <Compile Include="CM_SALES_CONTRACT_CUSTOMER.cs" />
+    <Compile Include="CM_SALES_CONTRACT_CUSTOM_SIGN.cs" />
+    <Compile Include="CM_SALES_CONTRACT_DOCUMENT.cs" />
+    <Compile Include="CM_SALES_CONTRACT_EXECUTE.cs" />
+    <Compile Include="CM_SALES_CONTRACT_EXPENSE.cs" />
+    <Compile Include="CM_SALES_CONTRACT_IMPLEMENT.cs" />
+    <Compile Include="CM_SALES_CONTRACT_INVOICE.cs" />
+    <Compile Include="CM_SALES_CONTRACT_MILESTONE.cs" />
+    <Compile Include="CM_SALES_CONTRACT_PAYMENT.cs" />
+    <Compile Include="CM_SALES_CONTRACT_PLAN.cs" />
+    <Compile Include="CM_SALES_CONTRACT_PRODUCT.cs" />
+    <Compile Include="CM_SALES_CONTRACT_RELATION.cs" />
+    <Compile Include="CM_SALES_CONTRACT_SIGN_PRODUCT.cs" />
+    <Compile Include="CM_SALES_CONTRACT_SPEND.cs" />
+    <Compile Include="CM_SALES_CONTRACT_SUBCONTRACT.cs" />
+    <Compile Include="CM_SALES_CONTRACT_WRITEOFF.cs" />
+    <Compile Include="CM_SALES_PLAN.cs" />
+    <Compile Include="CM_SALES_PLAN_ATTACH.cs" />
+    <Compile Include="CM_SALES_PLAN_CUSTOMER.cs" />
+    <Compile Include="CM_SALES_PLAN_DEVICE.cs" />
+    <Compile Include="CM_SALES_PLAN_OTHER.cs" />
+    <Compile Include="CM_SALES_PLAN_PRODUCT.cs" />
+    <Compile Include="CM_SALES_PLAN_SOFTWARE.cs" />
+    <Compile Include="CM_SC_CHANGE.cs" />
+    <Compile Include="CM_SC_CHANGE_CONTRACT.cs" />
+    <Compile Include="CM_SC_CHANGE_DETAIL.cs" />
+    <Compile Include="CM_SC_FINISH.cs" />
+    <Compile Include="CM_SC_FINISH_DETAIL.cs" />
+    <Compile Include="CM_SC_PRODUCT_MODULE.cs" />
+    <Compile Include="CM_SC_PRODUCT_MODULE_DETAIL.cs" />
+    <Compile Include="CM_SC_PRODUCT_MODULE_D_ITEM.cs" />
+    <Compile Include="CM_SOFTCHANGE_EVALUATION.cs" />
+    <Compile Include="CM_SP_DEVICE_PARTS_MODEL.cs" />
+    <Compile Include="CM_SP_DEVICE_PARTS_TYPE.cs" />
+    <Compile Include="CM_SP_PRODUCT_MODULE.cs" />
+    <Compile Include="CM_SP_PRODUCT_MODULE_DETAIL.cs" />
+    <Compile Include="CM_SP_PRODUCT_MODULE_D_ITEM.cs" />
+    <Compile Include="CM_SP_SOFTWARE_MODULE.cs" />
+    <Compile Include="CONTRACTRECEICEDAMOUNT_VIEW.cs" />
+    <Compile Include="CONTRACT_FUNCTIONPOINT.cs" />
+    <Compile Include="CONTRACT_FUNCTIONPOINT_INFO.cs" />
+    <Compile Include="CRM_CONTACT.cs" />
+    <Compile Include="CRM_CUSTOMER.cs" />
+    <Compile Include="CRM_CUSTOMER_BANK.cs" />
+    <Compile Include="CRM_SUPPLIER.cs" />
+    <Compile Include="CRM_SUPPLIER_ATTACH.cs" />
+    <Compile Include="CRM_SUPPLIER_PRODUCT.cs" />
+    <Compile Include="DING_TALK_DEPT.cs" />
+    <Compile Include="DING_TALK_TOKEN.cs" />
+    <Compile Include="DING_TALK_USER.cs" />
+    <Compile Include="DM_COMPONENT.cs" />
+    <Compile Include="DM_DEVICE.cs" />
+    <Compile Include="DM_HIS_DEVICE.cs" />
+    <Compile Include="DM_HIS_PARTS.cs" />
+    <Compile Include="DM_PARTS.cs" />
+    <Compile Include="FC_CONTRACTPAYMENTMONTHPLAN.cs" />
+    <Compile Include="FC_EXPENSE_POOL.cs" />
+    <Compile Include="FC_EXPENSE_POOL_PERCENTAGE.cs" />
+    <Compile Include="FC_RECEIVE_PAYMENT.cs" />
+    <Compile Include="FC_RECEIVE_PAYMENT_DETAILS.cs" />
+    <Compile Include="HR_DEPT.cs" />
+    <Compile Include="LOG_CONTRACTINFO_CHANGE.cs" />
+    <Compile Include="LOG_CONTRACTINFO_CHANGE_MAIN.cs" />
+    <Compile Include="Model1.cs" />
+    <Compile Include="MT_CUSTOMER_SERVICE_ADDRESS.cs" />
+    <Compile Include="MT_CUSTOMER_SERVICE_RECORD.cs" />
+    <Compile Include="MT_SEND_REPAIR.cs" />
+    <Compile Include="MT_SEND_REPAIR_ITEM.cs" />
+    <Compile Include="NC_SDEPTMENT_COMPANY_RELATION.cs" />
+    <Compile Include="OA_CONTRACT.cs" />
+    <Compile Include="OA_CONTRACT_PRODUCT.cs" />
+    <Compile Include="OA_CUSTOMER.cs" />
+    <Compile Include="OA_POOL_SALES_CONTRACT.cs" />
+    <Compile Include="OA_PROJECT.cs" />
+    <Compile Include="OA_PROJECT_BILL.cs" />
+    <Compile Include="OA_PURCHASE.cs" />
+    <Compile Include="OA_PURCHASE_PRODUCT.cs" />
+    <Compile Include="OA_SALES_CONTRACT_INVOICE.cs" />
+    <Compile Include="OA_SALES_CONTRACT_RECEIVE.cs" />
+    <Compile Include="OA_SALES_CUSTOMER.cs" />
+    <Compile Include="OA_SUPPLIER.cs" />
+    <Compile Include="PC_PRODUCE_ATTACH.cs" />
+    <Compile Include="PC_PRODUCE_MESSAGE.cs" />
+    <Compile Include="PC_PRODUCE_TASK.cs" />
+    <Compile Include="PC_PRODUCE_TASK_DETAIL.cs" />
+    <Compile Include="PC_PRODUCE_TASK_EMPLOYEE.cs" />
+    <Compile Include="PC_PRODUCE_TASK_PRODUCT.cs" />
+    <Compile Include="PC_PRODUCE_TASK_QC_DETAIL.cs" />
+    <Compile Include="PC_PRODUCE_TRACK.cs" />
+    <Compile Include="PC_PRODUCE_TRACK_EMPLOYEE.cs" />
+    <Compile Include="PC_QC_MODEL.cs" />
+    <Compile Include="PC_QC_MODEL_STANDARD.cs" />
+    <Compile Include="PC_QC_STANDARD.cs" />
+    <Compile Include="PC_QC_STANDARD_ITEM.cs" />
+    <Compile Include="PM_BORROW_PARTS.cs" />
+    <Compile Include="PM_BORROW_PARTS_DETAIL.cs" />
+    <Compile Include="PM_COMPONENT_MODEL.cs" />
+    <Compile Include="PM_DEVICE_MODEL.cs" />
+    <Compile Include="PM_DEVICE_MODEL_PARTS_MODEL.cs" />
+    <Compile Include="PM_DEVICE_MODEL_PARTS_TYPE.cs" />
+    <Compile Include="PM_PARTS_MODEL.cs" />
+    <Compile Include="PM_PARTS_MODEL_COMPONENT.cs" />
+    <Compile Include="PM_PARTS_TYPE.cs" />
+    <Compile Include="PM_PRODUCT.cs" />
+    <Compile Include="PM_PRODUCT_MODULE.cs" />
+    <Compile Include="PM_PRODUCT_MODULE_DETAIL.cs" />
+    <Compile Include="PM_PRODUCT_MODULE_DETAIL_ITEM.cs" />
+    <Compile Include="PM_PRODUCT_MODULE_MUTEX.cs" />
+    <Compile Include="PM_PRODUCT_TAG.cs" />
+    <Compile Include="PM_PRODUCT_TYPE.cs" />
+    <Compile Include="PM_PRODUCT_TYPE_CONFIG.cs" />
+    <Compile Include="PM_PRODUCT_TYPE_OLD.cs" />
+    <Compile Include="PM_SIGN_PRODUCT_TYPE.cs" />
+    <Compile Include="PM_SOFTWARE.cs" />
+    <Compile Include="PM_SOFTWARE_MODULE.cs" />
+    <Compile Include="PM_TEST_REPORT.cs" />
+    <Compile Include="PO_ICCAERDPURCHASE_APPLY_ITEM.cs" />
+    <Compile Include="PO_ICCARDPURCHASE_APPLY.cs" />
+    <Compile Include="PO_PURCHASE_APPLY.cs" />
+    <Compile Include="PO_PURCHASE_APPLY_ATTACH.cs" />
+    <Compile Include="PO_PURCHASE_APPLY_IDCAREINFO.cs" />
+    <Compile Include="PO_PURCHASE_APPLY_ITEM.cs" />
+    <Compile Include="PO_PURCHASE_CONTRACT.cs" />
+    <Compile Include="PO_PURCHASE_CONTRACT_ATTACH.cs" />
+    <Compile Include="PO_PURCHASE_CONTRACT_INVOICE.cs" />
+    <Compile Include="PO_PURCHASE_CONTRACT_PAYMENT.cs" />
+    <Compile Include="PO_PURCHASE_CONTRACT_PRODUCT.cs" />
+    <Compile Include="PO_PURCHASE_CONTRACT_RELATION.cs" />
+    <Compile Include="PO_PURCHASE_EMAIL_LOG.cs" />
+    <Compile Include="PO_PURCHASE_EMPLOYEE_AREA.cs" />
+    <Compile Include="PO_PURCHASE_ORDER.cs" />
+    <Compile Include="PO_PURCHASE_ORDER_ATTACH.cs" />
+    <Compile Include="PO_PURCHASE_ORDER_PARTS.cs" />
+    <Compile Include="PO_PURCHASE_ORDER_PARTS_PICKED.cs" />
+    <Compile Include="PO_PURCHASE_ORDER_PARTS_TRACK.cs" />
+    <Compile Include="PO_PURCHASE_ORDER_PRODUCT.cs" />
+    <Compile Include="PO_P_C_SIGN_PRODUCT.cs" />
+    <Compile Include="PO_P_C_SIGN_PRODUCT_DETAIL.cs" />
+    <Compile Include="PO_P_O_PRODUCT_PARTS.cs" />
+    <Compile Include="PO_P_O_PRODUCT_PARTS_TYPE.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PR_BUSINESS_SPLIT.cs" />
+    <Compile Include="PR_BUSINESS_SPLIT_DETAIL.cs" />
+    <Compile Include="PR_PROJECT.cs" />
+    <Compile Include="PR_PROJECT_AMOUNT_ADJUST.cs" />
+    <Compile Include="PR_PROJECT_ATTACH.cs" />
+    <Compile Include="PR_PROJECT_BID.cs" />
+    <Compile Include="PR_PROJECT_BONUS.cs" />
+    <Compile Include="PR_PROJECT_BONUS_DETAIL.cs" />
+    <Compile Include="PR_PROJECT_BONUS_IMPORT.cs" />
+    <Compile Include="PR_PROJECT_BUSINESS.cs" />
+    <Compile Include="PR_PROJECT_CONTRACT.cs" />
+    <Compile Include="PR_PROJECT_COST_STRUCT.cs" />
+    <Compile Include="PR_PROJECT_COST_TRANSFER.cs" />
+    <Compile Include="PR_PROJECT_DEPLOY_INFO.cs" />
+    <Compile Include="PR_PROJECT_DEPLOY_TYPE.cs" />
+    <Compile Include="PR_PROJECT_FUNDS.cs" />
+    <Compile Include="PR_PROJECT_MANAGER_CHANGE.cs" />
+    <Compile Include="PR_PROJECT_MILESTONE.cs" />
+    <Compile Include="PR_PROJECT_MILESTONE_PRODUCT.cs" />
+    <Compile Include="PR_PROJECT_PERCENTAGE.cs" />
+    <Compile Include="PR_PROJECT_PRODUCT.cs" />
+    <Compile Include="PR_PROJECT_PROGRESS.cs" />
+    <Compile Include="PR_PROJECT_PROGRESS_TASK.cs" />
+    <Compile Include="PR_PROJECT_RELEASE.cs" />
+    <Compile Include="PR_PROJECT_SPEND.cs" />
+    <Compile Include="PR_P_F_POOL_IN_OUT.cs" />
+    <Compile Include="RELATIONSHIP.cs" />
+    <Compile Include="SYS_APP_POWER.cs" />
+    <Compile Include="SYS_BUSINESS_NOTICE.cs" />
+    <Compile Include="SYS_COMPANY.cs" />
+    <Compile Include="SYS_COMPANY_CONFIG.cs" />
+    <Compile Include="SYS_COMPANY_CONFIG_PROJECT.cs" />
+    <Compile Include="SYS_CUSTOM_ID.cs" />
+    <Compile Include="SYS_DATA_POWER.cs" />
+    <Compile Include="SYS_DEPARTMENT.cs" />
+    <Compile Include="SYS_EMPLOYEE.cs" />
+    <Compile Include="SYS_EMPLOYEE_CONFIG.cs" />
+    <Compile Include="SYS_EMPLOYEE_DEPARTMENT.cs" />
+    <Compile Include="SYS_EMPLOYEE_ROLE.cs" />
+    <Compile Include="SYS_MENU_POWER.cs" />
+    <Compile Include="SYS_MILESTONE.cs" />
+    <Compile Include="SYS_NOTICE.cs" />
+    <Compile Include="SYS_OPERATION_LOG.cs" />
+    <Compile Include="SYS_PARAMETER.cs" />
+    <Compile Include="SYS_PARAMETER_ENUM.cs" />
+    <Compile Include="SYS_POSITION.cs" />
+    <Compile Include="SYS_ROLE.cs" />
+    <Compile Include="SYS_SERIAL_NUMBER.cs" />
+    <Compile Include="SYS_SERVICES.cs" />
+    <Compile Include="SYS_STATUS_LOG.cs" />
+    <Compile Include="SYS_VERSION.cs" />
+    <Compile Include="TS_CONSUMABLE_REQUEST.cs" />
+    <Compile Include="TS_CONSUMABLE_REQUEST_ITEM.cs" />
+    <Compile Include="TS_SALES_DELIVERY.cs" />
+    <Compile Include="TS_SALES_DELIVERY_FEE.cs" />
+    <Compile Include="TS_SALES_DELIVERY_ITEM.cs" />
+    <Compile Include="WF_FLOW_EXECUTE.cs" />
+    <Compile Include="WF_FLOW_EXECUTE_ATTACH.cs" />
+    <Compile Include="WF_FLOW_EXECUTE_EKP.cs" />
+    <Compile Include="WF_FLOW_EXECUTE_EKP_EMPLOYEE.cs" />
+    <Compile Include="WF_FLOW_EXECUTE_EMPLOYEE.cs" />
+    <Compile Include="WF_FLOW_EXECUTE_NODE.cs" />
+    <Compile Include="WF_FLOW_EXECUTE_NODE_EKP.cs" />
+    <Compile Include="WF_FLOW_MODEL.cs" />
+    <Compile Include="WF_FLOW_MODEL_EKP.cs" />
+    <Compile Include="WF_FLOW_MODEL_NODE.cs" />
+    <Compile Include="WH_WORKHOURS_DETAILS.cs" />
+    <Compile Include="WH_WORKHOURS_MAIN.cs" />
+    <Compile Include="WM_STOCK.cs" />
+    <Compile Include="WM_STOCK_BATCH.cs" />
+    <Compile Include="WM_STOCK_IO.cs" />
+    <Compile Include="WM_STOCK_IO_APPLY.cs" />
+    <Compile Include="WM_STOCK_IO_BATCH.cs" />
+    <Compile Include="WM_STOCK_IO_ITEM.cs" />
+    <Compile Include="WM_STOCK_ITEM.cs" />
+    <Compile Include="WM_WAREHOUSE.cs" />
+    <Compile Include="WM_WAREHOUSE_POSITION.cs" />
+    <Compile Include="WM_WAREHOUSE_POWER.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Oracle.DataAccess.Common.Configuration.Section.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Oracle.ManagedDataAccess.Client.Configuration.Section.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\System.Text.Json.6.0.1\build\System.Text.Json.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Text.Json.6.0.1\build\System.Text.Json.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <Import Project="..\packages\System.Text.Json.6.0.1\build\System.Text.Json.targets" Condition="Exists('..\packages\System.Text.Json.6.0.1\build\System.Text.Json.targets')" />
+</Project>
